@@ -1,0 +1,12 @@
+<ion-view view-title="Ongoing Discussions">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats | filter: {isArchived:false}" type="item-text-wrap" href="#/tab/discussion/{{chat.id}}">
+        <img ng-src="{{chat.image}}">
+        <h2>{{chat.title}}</h2>
+        <p>{{chat.details}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

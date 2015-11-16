@@ -1,0 +1,29 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{chat.title}}">
+  <ion-content>
+    <div class="text-center" >
+      <img ng-src="{{chat.image}}" style="max-width: 246px; max-height: 128px" >      
+    </div>
+    <p class="padding">
+      {{chat.details}}
+    </p>
+
+    <ion-item ng-repeat="comment in chat.comments" class="item-text-wrap">
+       <p>{{comment}}</p>       
+    </ion-item>
+
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Your comments</span>
+        <input type="text" ng-model="userComment" placeholder="What do you say?">
+      </label>
+      <button class="button button-full button-positive" ng-click="addComment()">Add Comment</button>
+    </div>
+
+  </ion-content>
+</ion-view>
