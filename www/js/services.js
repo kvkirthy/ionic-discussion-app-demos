@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.factory('chats', function() {
+.factory('localDataSource', function() {
 
   var chats = [{
     id: 0,

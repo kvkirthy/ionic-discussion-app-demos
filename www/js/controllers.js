@@ -1,10 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('currentDiscussionsController', ['$scope', 'firebaseDataSource', function($scope, chats) {
+.controller('currentDiscussionsController', ['$scope', 'localDataSource', function($scope, chats) {
   $scope.chats = chats.all();
 }])
 
-.controller('discussionDetailsController', ["$scope", "$state", "$stateParams", "firebaseDataSource",function($scope, $state, $stateParams, chats) {
+.controller('discussionDetailsController', ["$scope", "$state", "$stateParams", "localDataSource",function($scope, $state, $stateParams, chats) {
   $scope.chat = chats.get($stateParams.chatId);
   $scope.isArchive = $state.$current.name === "tab.discussion-detail"
   
