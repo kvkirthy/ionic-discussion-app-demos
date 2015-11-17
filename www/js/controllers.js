@@ -4,8 +4,9 @@ angular.module('starter.controllers', [])
   $scope.chats = chats.all();
 }])
 
-.controller('discussionDetailsController', ["$scope", "$stateParams", "firebaseDataSource",function($scope, $stateParams, chats) {
+.controller('discussionDetailsController', ["$scope", "$state", "$stateParams", "firebaseDataSource",function($scope, $state, $stateParams, chats) {
   $scope.chat = chats.get($stateParams.chatId);
+  $scope.isArchive = $state.$current.name === "tab.discussion-detail"
   
   $scope.addComment = function(keyEvent) {
       if($scope.chat.comments && $scope.chat.comments.length && $scope.chat.comments.push){       

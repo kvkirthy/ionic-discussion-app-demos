@@ -49,6 +49,9 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },    
+    save: function(record){
+      console.log('saved');
     }
   };
 })
